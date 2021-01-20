@@ -28,5 +28,5 @@ if __name__=="__main__":
 	print(password)
 	print("It Will Be Saved On Your Computer As \"save.txt\"")
 	with open("save.txt","a")as f:
-    		f.write(password)
+    		f.write(password + "\n")
 
