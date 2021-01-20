@@ -9,10 +9,11 @@ if __name__=="__main__":
 	s4=string.punctuation
 	while True:
 		try:
-			password_length=int(input("Enter Password Length : "))
+			plen=int(input("Enter Password Length : "))
 			break
 		except ValueError:
 			print("Please Enter Password Length In Number")
+			plen=int(input("Enter Password Length : "))
 	s=[]
 	s.extend(list(s1))
 	s.extend(list(s2))
@@ -23,4 +24,9 @@ if __name__=="__main__":
 	print("Generating Password.........")
 	time.sleep(1)
 	print("The Password For You Is : ")
-	print("".join(s[0:password_length]))
+	password="".join(s[0:plen])
+	print(password)
+	print("It Will Be Saved On Your Computer As \"save.txt\"")
+	with open("save.txt","a")as f:
+    		f.write(password)
+
